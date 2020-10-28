@@ -21,6 +21,9 @@ const useStyles = makeStyles((theme) => ({
     width: "400px",
     height: "300px",
     borderRadius: "20px",
+    "@media (max-width: 500px)": {
+      width: "100%",
+    }
   },
   recipe: {
     margin: "30px",
