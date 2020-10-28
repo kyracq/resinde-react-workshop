@@ -1,9 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import Dialog from "@material-ui/core/Dialog";
 import Grid from "@material-ui/core/Grid";
-import Button from "@material-ui/core/Button";
 import RecipeDetails from "./recipeDetails";
 
 import recipes from "../data/recipes.js";

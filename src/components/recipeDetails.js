@@ -3,26 +3,22 @@ import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Dialog from "@material-ui/core/Dialog";
 import Grid from "@material-ui/core/Grid";
-import Button from "@material-ui/core/Button";
-import SvgIcon from '@material-ui/core/SvgIcon';
 import ClockIcon from "../icons/Clock.svg";
-
-import recipes from "../data/recipes.js";
 import {
   DialogContentText,
   DialogTitle,
   DialogContent,
 } from "@material-ui/core";
 
+import recipes from "../data/recipes.js";
+
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
   title: {
-    color: "black",
-    fontFamily: "Nunito",
-    marginBottom: "30px",
-    fontWeight: "700",
+    flexGrow: 1,
   },
   images: {
     objectFit: "cover",
@@ -30,11 +26,19 @@ const useStyles = makeStyles((theme) => ({
     height: "300px",
     borderRadius: "0 0 20px 20px",
   },
+  ingredients: {
+    objectFit: "cover",
+    width: "150px",
+    height: "200px",
+    borderRadius: "20px",
+  },
   titleSection: {
-    display: "flex"
+    display: "flex",
+    alignItems: "center"
   },
   icon: {
-    height: "1rem"
+    height: "1.5rem",
+    marginRight: "10px"
   }
 }));
 
@@ -46,11 +50,11 @@ export default function RecipeDetails(props) {
   const classes = useStyles();
 
   return (
-    <Dialog onClose={onClose} open={open}>
+    <Dialog onClose={onClose} open={open} fullHeight>
       <img src={recipe.img} alt={recipe.title} className={classes.images} />
       <DialogContent>
         <div className={classes.titleSection}>
-          <Typography variant="h4">{recipe.title}</Typography>
+          <Typography variant="h4" className={classes.title}>{recipe.title}</Typography>
           <img src={ClockIcon} alt="Clock" className={classes.icon}/>
           <div>{recipe.time}</div>
         </div>
@@ -59,6 +63,15 @@ export default function RecipeDetails(props) {
         <DialogContentText>{recipe.description}</DialogContentText>
 
         <DialogTitle>Ingredients</DialogTitle>
+        <Grid container spacing={8} justify="center">
+        {recipe.ingredients.map((ingredient) => {
+          return (
+            <Grid item>
+              <img src={ingredient.img} alt={ingredient.name} className={classes.ingredients}/>
+            </Grid>
+          );
+        })}
+        </Grid>
       </DialogContent>
     </Dialog>
   );
