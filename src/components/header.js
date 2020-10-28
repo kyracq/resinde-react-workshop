@@ -7,6 +7,8 @@ import IconButton from "@material-ui/core/IconButton";
 import ChefHatIcon from "../icons/ChefHat.svg";
 import ProfileIcon from "../icons/Profile.svg";
 
+import { Link } from "react-router-dom";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -15,6 +17,9 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     color: "black",
     fontFamily: "Nunito",
+  },
+  margin: {
+    margin: "0 20px 0 20px",
   },
 }));
 
@@ -28,12 +33,16 @@ export default function Header() {
           <Typography variant="h3" className={classes.title}>
             food.io
           </Typography>
-          <IconButton>
-            <img src={ChefHatIcon} alt="Recipes"/>
-          </IconButton>
-          <IconButton>
-            <img src={ProfileIcon} alt="Profile"/>
-          </IconButton>
+          <Link to="/">
+            <IconButton className={classes.margin}>
+              <img src={ChefHatIcon} alt="Recipes" />
+            </IconButton>
+          </Link>
+          <Link to="/profile">
+            <IconButton className={classes.margin}>
+              <img src={ProfileIcon} alt="Profile" />
+            </IconButton>
+          </Link>
         </Toolbar>
       </AppBar>
     </div>
