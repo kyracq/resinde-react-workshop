@@ -14,6 +14,10 @@ const useStyles = makeStyles((theme) => ({
     color: "black",
     fontFamily: "Nunito",
   },
+  images: {
+    width: "100px",
+    height: "100px",
+  },
 }));
 
 export default function Recipes() {
@@ -22,9 +26,8 @@ export default function Recipes() {
   return (
     <div>
       <Typography variant="h1">Recipes</Typography>
-      {recipes.map((value) => {
-        return value.title;
-        // return <Recipe data={value} />;
+      {recipes.map((recipe) => {
+        return (<img src={recipe.img} alt={recipe.title} className={classes.images}/>);
       })}
     </div>
   );
