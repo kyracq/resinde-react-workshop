@@ -26,7 +26,7 @@ export default function Profile() {
         <Typography variant="h6">John Doe</Typography>
         <Typography variant="h8">3 posts</Typography>
       </div>
-      <Recipes title="John Doe's recipes"/>
+      <Recipes title="John Doe's recipes" />
     </div>
   );
 }

@@ -12,7 +12,6 @@ import {
 
 import recipes from "../data/recipes.js";
 
-
 const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
@@ -31,16 +30,15 @@ const useStyles = makeStyles((theme) => ({
   },
   titleSection: {
     display: "flex",
-    alignItems: "center"
+    alignItems: "center",
   },
   icon: {
     height: "1.5rem",
-    marginRight: "10px"
-  }
+    marginRight: "10px",
+  },
 }));
 
 export default function RecipeDetails(props) {
-
   const { onClose, open, index } = props;
   const recipe = recipes[index];
 
@@ -51,8 +49,10 @@ export default function RecipeDetails(props) {
       <img src={recipe.img} alt={recipe.title} className={classes.images} />
       <DialogContent>
         <div className={classes.titleSection}>
-          <Typography variant="h4" className={classes.title}>{recipe.title}</Typography>
-          <img src={ClockIcon} alt="Clock" className={classes.icon}/>
+          <Typography variant="h4" className={classes.title}>
+            {recipe.title}
+          </Typography>
+          <img src={ClockIcon} alt="Clock" className={classes.icon} />
           <div>{recipe.time}</div>
         </div>
 
@@ -61,15 +61,18 @@ export default function RecipeDetails(props) {
 
         <DialogTitle>Ingredients</DialogTitle>
         <Grid container spacing={8} justify="center">
-        {recipe.ingredients.map((ingredient) => {
-          return (
-            <Grid item>
-              <img src={ingredient.img} alt={ingredient.name} className={classes.ingredients}/>
-            </Grid>
-          );
-        })}
+          {recipe.ingredients.map((ingredient) => {
+            return (
+              <Grid item>
+                <img
+                  src={ingredient.img}
+                  alt={ingredient.name}
+                  className={classes.ingredients}
+                />
+              </Grid>
+            );
+          })}
         </Grid>
-
       </DialogContent>
     </Dialog>
   );

@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "20px",
     "@media (max-width: 500px)": {
       width: "100%",
-    }
+    },
   },
   wrapper: {
     margin: "60px",
