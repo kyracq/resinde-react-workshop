@@ -12,9 +12,11 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/">
-            <Recipes title="All recipes" />
+            <Recipes />
           </Route>
-          <Route exact path="/profile" component={Profile} />
+          <Route exact path="/profile" >
+            <Profile />
+          </Route>
         </Switch>
       </Router>
     </div>

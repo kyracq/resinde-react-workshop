@@ -36,16 +36,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Recipes(props) {
+export default function Recipes() {
   const classes = useStyles();
 
   const [open, setOpen] = React.useState(false);
-  const [currRecipeIndex, setCurrRecipeIndex] = React.useState(0);
 
-  const handleClickOpen = (index) => () => {
-    setCurrRecipeIndex(index);
-    setOpen(true);
-  };
+  // TODO: write function to handle user clicking on a recipe
 
   const handleClose = () => {
     setOpen(false);
@@ -54,30 +50,17 @@ export default function Recipes(props) {
   return (
     <div className={classes.wrapper}>
       <Typography variant="h4" className={classes.title}>
-        {props.title}
+        Recipes
       </Typography>
       <Grid container spacing={8} justify="center">
-        {recipes.map((recipe, index) => {
+        {recipes.map((recipe) => {
           return (
             <Grid item>
-              <div
-                onClick={handleClickOpen(index)}
-                className={classes.recipeItem}
-              >
-                <img
-                  src={recipe.img}
-                  alt={recipe.title}
-                  className={classes.images}
-                />
-                <div className={classes.recipeInfo}>
-                  <div className={classes.recipeTitle}>{recipe.title}</div>
-                  <div>{recipe.time}</div>
-                </div>
-              </div>
+              {/* TODO: display recipes */}
               <RecipeDetails
                 onClose={handleClose}
                 open={open}
-                index={currRecipeIndex}
+                index={0} // TODO: set right index
               />
             </Grid>
           );

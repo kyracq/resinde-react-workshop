@@ -47,6 +47,7 @@ export default function RecipeDetails(props) {
   return (
     <Dialog onClose={onClose} open={open} fullHeight>
       <img src={recipe.img} alt={recipe.title} className={classes.images} />
+
       <DialogContent>
         <div className={classes.titleSection}>
           <Typography variant="h4" className={classes.title}>
@@ -61,17 +62,7 @@ export default function RecipeDetails(props) {
 
         <DialogTitle>Ingredients</DialogTitle>
         <Grid container spacing={8} justify="center">
-          {recipe.ingredients.map((ingredient) => {
-            return (
-              <Grid item>
-                <img
-                  src={ingredient.img}
-                  alt={ingredient.name}
-                  className={classes.ingredients}
-                />
-              </Grid>
-            );
-          })}
+          {/* {TODO: display recipe's ingredients} */}
         </Grid>
       </DialogContent>
     </Dialog>
