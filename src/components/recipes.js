@@ -25,9 +25,6 @@ const useStyles = makeStyles((theme) => ({
       width: "100%",
     }
   },
-  recipe: {
-    margin: "30px",
-  },
   wrapper: {
     margin: "60px",
   },
@@ -42,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Recipes() {
+export default function Recipes(props) {
   const classes = useStyles();
 
   const [open, setOpen] = React.useState(false);
@@ -60,7 +57,7 @@ export default function Recipes() {
   return (
     <div className={classes.wrapper}>
       <Typography variant="h4" className={classes.title}>
-        Recipes
+        {props.title}
       </Typography>
       <Grid container spacing={8} justify="center">
         {recipes.map((recipe, index) => {
@@ -77,7 +74,7 @@ export default function Recipes() {
                 />
                 <div className={classes.recipeInfo}>
                   <div className={classes.recipeTitle}>{recipe.title}</div>
-                  <div style={{ color: "grey" }}>{recipe.time}</div>
+                  <div>{recipe.time}</div>
                 </div>
               </div>
               <RecipeDetails

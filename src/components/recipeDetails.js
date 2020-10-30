@@ -58,8 +58,8 @@ export default function RecipeDetails(props) {
           <img src={ClockIcon} alt="Clock" className={classes.icon}/>
           <div>{recipe.time}</div>
         </div>
-        <DialogTitle>Description</DialogTitle>
 
+        <DialogTitle>Description</DialogTitle>
         <DialogContentText>{recipe.description}</DialogContentText>
 
         <DialogTitle>Ingredients</DialogTitle>
@@ -72,6 +72,7 @@ export default function RecipeDetails(props) {
           );
         })}
         </Grid>
+
       </DialogContent>
     </Dialog>
   );
