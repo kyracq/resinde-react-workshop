@@ -1,19 +1,9 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
 import Recipes from "./recipes";
 
 const useStyles = makeStyles((theme) => ({
-  title: {
-    color: "black",
-    fontFamily: "Nunito",
-    marginBottom: "30px",
-    fontWeight: "700",
-  },
-  wrapper: {
-    margin: "60px",
-  },
   profile: {
     textAlign: "center",
     padding: "60px 60px 0 60px",

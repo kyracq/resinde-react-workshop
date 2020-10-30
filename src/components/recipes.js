@@ -7,9 +7,6 @@ import RecipeDetails from "./recipeDetails";
 import recipes from "../data/recipes.js";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
   title: {
     color: "black",
     fontFamily: "Nunito",
